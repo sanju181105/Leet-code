@@ -1,16 +1,14 @@
 class Solution {
-    public int countDigits(int num) {
-        int n=num,step=0;
-        if(n<10){
-            step++;
-            return step;
+    public int countDigits(int n) {
+        int temp=n;
+        int count=0;
+        while(temp>0){
+            int digit=temp%10;
+            if(digit!=0&&n%digit==0){
+            count++;
+            }
+             temp/=10;
         }
-        while(num!=0){
-            int temp=num%10;
-            if(n%temp==0){
-                step++;
-            }num/=10;
-        }
-        return step;
+        return count;
     }
 }
